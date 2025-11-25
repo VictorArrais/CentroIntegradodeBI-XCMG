@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Integrado de BI - XCMG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f7 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(100deg, #004C97 0%, #003d7a 100%);
+            color: white;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: #b3d9ff;
+            font-weight: 300;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .xcmg-logo {
+            width: 180px;
+            height: auto;
+            margin-right: 20px;
+            background: white;
+            padding: 6px 8px;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .search-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: #004C97;
+            box-shadow: 0 0 0 3px rgba(0, 76, 151, 0.1);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .category-bar {
+            width: 4px;
+            height: 2rem;
+            background: #004C97;
+            border-radius: 2px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* BI Card */
+        .bi-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e8e8e8;
+        }
+
+        .bi-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+            border-color: #004C97;
+        }
+
+        .bi-card-top {
+            height: 4px;
+            background: linear-gradient(90deg, #004C97 0%, #003d7a 100%);
+        }
+
+        .bi-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bi-card-image {
+            width: 100%;
+            height: 160px;          /* Ajuste como quiser */
+            overflow: hidden;
+        }
+
+        .bi-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;      /* Corta a imagem mantendo estética */
+            display: block;
+        }
+
+
+        .bi-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .bi-card:hover .bi-card-title {
+            color: #004C97;
+        }
+
+        .bi-card-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .bi-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #004C97;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: gap 0.3s;
+        }
+
+        .bi-card:hover .bi-card-link {
+            gap: 0.75rem;
+        }
+
+        .arrow {
+            transition: transform 0.3s;
+        }
+
+        .bi-card:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 1rem 1rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.95rem;
+            }
+
+            .category-header {
+                font-size: 1.4rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 1rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 2rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .search-container {
+                padding: 1rem;
+            }
+
+            #searchInput {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-section">
+                <img src="images/XCMG_logo.svg.png" alt="Logo XCMG" class="xcmg-logo">
+        </div>
+        <h1>Centro Integrado de BI - Engenharia de Aplicação</h1>
+        <p>Acesso centralizado a todos os dashboards do departamento da Engenharia de Aplicação XCMG </p>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Buscar por nome ou descrição do BI..."
+                autocomplete="off"
+            >
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div id="noResults" class="no-results" style="display: none;">
+            Nenhum BI encontrado com os termos de busca.
+        </div>
+
+        <!-- Engenharia de Performance -->
+        <section class="category-section" data-category="performance">
+            <div class="category-header">
+                <div class="category-bar"></div>
+                <span>Engenharia de Performance</span>
+            </div>
+            <div class="cards-grid" id="performance-grid">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiMDQ4NGU5MGEtNjA0NS00NDI4LTg1NDktZDIzMjk1MWM5M2ZhIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="DF de máquinas" data-description="Análise de desempenho e funcionalidade das máquinas">
+                    <div class="bi-card-image">
+                        <img src="images/DF.png" alt="DF de Equipamentos">
+                    </div>
+                    <div class="bi-card-content">
+                        <h3 class="bi-card-title">DF de máquinas</h3>
+                        <p class="bi-card-description">Análise de desempenho das máquinas através da DF, Perfil de Perdas </p>
+                        <div class="bi-card-link">
+                            Acessar BI
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Homologação -->
+        <section class="category-section" data-category="homologacao">
+            <div class="category-header">
+                <div class="category-bar"></div>
+                <span>Homologação</span>
+            </div>
+            <div class="cards-grid" id="homologacao-grid">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzM5NTc3ZmMtYjNiZC00NGJhLWFlYTQtZjM4MjE4YjlhZDUyIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Teste XDE260" data-description="Dashboard de testes e homologação do equipamento XDE260">
+                    <div class="bi-card-image">
+                        <img src="images/xde260.jpeg" alt="Caminhão XDE260">
+                    </div>
+                    <div class="bi-card-content">
+                        <h3 class="bi-card-title">Desempenho do Teste do XDE260</h3>
+                        <p class="bi-card-description">Dashboard do desempenho operacional do Caminhão Diesel-Elétrico XDE260</p>
+                        <div class="bi-card-link">
+                            Acessar BI
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNTBjN2ZiOTEtNTczNS00NmU0LWJjYzEtYzgzZGNiYjk2ODIyIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Kick off" data-description="Kick off de Novos Equipamentos">
+                    <div class="bi-card-image">
+                        <img src="images/kickoff.png" alt="Kick-Off">
+                    </div>
+                    <div class="bi-card-content">
+                        <h3 class="bi-card-title">Kickoff de Novos Equipamentos</h3>
+                        <p class="bi-card-description">Monitoramento de requisitos para homologação de novos equipamentos</p>
+                        <div class="bi-card-link">
+                            Acessar BI
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Inteligência de Mercado -->
+        <section class="category-section" data-category="mercado">
+            <div class="category-header">
+                <div class="category-bar"></div>
+                <span>Inteligência de Mercado</span>
+            </div>
+            <div class="cards-grid" id="mercado-grid">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNmEzNjRjYzEtODdkMS00MDJlLTk1MDEtY2IwYzNmNjQ5NjBlIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Distribuição de máquinas" data-description="Inteligência de mercado e distribuição de máquinas">
+                    <div class="bi-card-image">
+                        <img src="images/IntelMer.png" alt="Distribuição de Máqinas">
+                    </div>
+                    <div class="bi-card-content">
+                        <h3 class="bi-card-title">Distribuição de máquinas</h3>
+                        <p class="bi-card-description">Inteligência de mercado e distribuição de máquinas</p>
+                        <div class="bi-card-link">
+                            Acessar BI
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Diversos -->
+        <section class="category-section" data-category="performance">
+            <div class="category-header">
+                <div class="category-bar"></div>
+                <span>Diversos</span>
+            </div>
+            <div class="cards-grid" id="diversos-grid">
+                <a href="" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Diversos" data-description="Análise de BI diversos">
+                    <div class="bi-card-top"></div>
+                    <div class="bi-card-content">
+                        <h3 class="bi-card-title">Diversos</h3>
+                        <p class="bi-card-description">BI diversos</p>
+                        <div class="bi-card-link">
+                            Acessar BI
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Centro Integrado de BI - Engenharia de Aplicação - XCMG</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const noResults = document.getElementById('noResults');
+        const categorySections = document.querySelectorAll('.category-section');
+        const allCards = document.querySelectorAll('.bi-card');
+
+        // Função de busca
+        function filterBIs() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let hasVisibleCards = false;
+
+            categorySections.forEach(section => {
+                const grid = section.querySelector('.cards-grid');
+                const cards = grid.querySelectorAll('.bi-card');
+                let visibleInSection = 0;
+
+                cards.forEach(card => {
+                    const name = card.getAttribute('data-name').toLowerCase();
+                    const description = card.getAttribute('data-description').toLowerCase();
+
+                    if (name.includes(searchTerm) || description.includes(searchTerm) || searchTerm === '') {
+                        card.style.display = '';
+                        visibleInSection++;
+                        hasVisibleCards = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Mostrar/ocultar seção se houver cards visíveis
+                section.style.display = visibleInSection > 0 ? '' : 'none';
+            });
+
+            // Mostrar mensagem de nenhum resultado
+            noResults.style.display = hasVisibleCards ? 'none' : 'block';
+        }
+
+        // Event listener para o input de busca
+        searchInput.addEventListener('input', filterBIs);
+        searchInput.addEventListener('keyup', filterBIs);
+
+        // Inicializar
+        filterBIs();
+    </script>
+</body>
+</html>
