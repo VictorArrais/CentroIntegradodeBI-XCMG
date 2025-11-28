@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro Integrado de BI - XCMG</title>
+    <title>Integrated BI Center - XCMG</title>
     <style>
         * {
             margin: 0;
@@ -205,14 +205,14 @@
 
         .bi-card-image {
             width: 100%;
-            height: 160px;          /* Ajuste como quiser */
+            height: 160px;          /* Adjust as you like */
             overflow: hidden;
         }
 
         .bi-card-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;      /* Corta a imagem mantendo estética */
+            object-fit: cover;      /* Crop the image while keeping aesthetics */
             display: block;
         }
 
@@ -311,23 +311,23 @@
 </head>
 <body>
     <script>
-// Se o usuário não digitou a senha ainda, manda para a tela de login
-if (localStorage.getItem("acessoPermitido") !== "true") {
-    window.location.href = "password.html";
-}
-</script>
+    // If the user hasn't entered the password yet, redirect to the login screen
+    if (localStorage.getItem("acessoPermitido") !== "true") {
+        window.location.href = "password.html";
+    }
+    </script>
 
     <!-- Header -->
     <header>
         <div class="logo-section">
-                <img src="images/XCMG_logo.svg.png" alt="Logo XCMG" class="xcmg-logo">
+                <img src="images/XCMG_logo.svg.png" alt="XCMG Logo" class="xcmg-logo">
         </div>
         <div class="language-selector">
-                <a href="index.html" class="language-btn" style="text-decoration: none;">Portugês</a>
+                <a href="index.html" class="language-btn" style="text-decoration: none;">Português</a>
                 <a href="index-en.html" class="language-btn" style="text-decoration: none;">English</a>
             </div>
-        <h1>Centro Integrado de BI - Engenharia de Aplicação</h1>
-        <p>Acesso centralizado a todos os dashboards do departamento da Engenharia de Aplicação XCMG </p>
+        <h1>Integrated BI Center - Application Engineering</h1>
+        <p>Centralized access to all dashboards from the XCMG Application Engineering department</p>
     </header>
 
     <!-- Search Bar -->
@@ -337,7 +337,7 @@ if (localStorage.getItem("acessoPermitido") !== "true") {
             <input 
                 type="text" 
                 id="searchInput" 
-                placeholder="Buscar por nome ou descrição do BI..."
+                placeholder="Search by BI name or description..."
                 autocomplete="off"
             >
         </div>
@@ -346,64 +346,64 @@ if (localStorage.getItem("acessoPermitido") !== "true") {
     <!-- Main Content -->
     <main>
         <div id="noResults" class="no-results" style="display: none;">
-            Nenhum BI encontrado com os termos de busca.
+            No BI found matching the search terms.
         </div>
 
-        <!-- Engenharia de Performance -->
+        <!-- Performance Engineering -->
         <section class="category-section" data-category="performance">
             <div class="category-header">
                 <div class="category-bar"></div>
-                <span>Engenharia de Performance</span>
+                <span>Performance Engineering</span>
             </div>
             <div class="cards-grid" id="performance-grid">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiMDQ4NGU5MGEtNjA0NS00NDI4LTg1NDktZDIzMjk1MWM5M2ZhIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="DF de máquinas" data-description="Análise de desempenho e funcionalidade das máquinas">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiMDQ4NGU5MGEtNjA0NS00NDI4LTg1NDktZDIzMjk1MWM5M2ZhIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Machine DF" data-description="Analysis of machine performance and functionality">
                     <div class="bi-card-image">
-                        <img src="images/DF.png" alt="DF de Equipamentos">
+                        <img src="images/DF.png" alt="Equipment DF">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">DF de máquinas</h3>
-                        <p class="bi-card-description">Análise de desempenho das máquinas através da DF, Perfil de Perdas </p>
+                        <h3 class="bi-card-title">Machine DF</h3>
+                        <p class="bi-card-description">Analysis of machine performance through DF, Loss Profile</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiMmJhOTVlYmEtZWQ1Zi00MzM0LTk3MTktNTM0NzY4YjJjNGFlIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Controle de Melhoria" data-description="Controle de Melhoria(Notificações Técnicas), Curva S e Plano 6M">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiMmJhOTVlYmEtZWQ1Zi00MzM0LTk3MTktNTM0NzY4YjJjNGFlIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Improvement Control" data-description="Improvement Control (Technical Notifications), S-curve and 6M Plan">
                     <div class="bi-card-image">
-                        <img src="images/Controle de Melhorias.png" alt="Controle de Melhorias">
+                        <img src="images/Controle de Melhorias.png" alt="Improvement Control">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Controle de Melhorias</h3>
-                        <p class="bi-card-description">Controle de Melhorias (Notificações Técnicas), Curva S e Plano 6M</p>
+                        <h3 class="bi-card-title">Improvement Control</h3>
+                        <p class="bi-card-description">Improvement Control (Technical Notifications), S-curve and 6M Plan</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiYjlhNjJlNzctZmNlNC00NzJkLTgyNjktMzIyMmI0YTAzMzA3IiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9&pageName=58985bba85e8d6e57c9c" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Perfil de Perda - Vale" data-description="Análise de perfil de perda de máquinas na Vale">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYjlhNjJlNzctZmNlNC00NzJkLTgyNjktMzIyMmI0YTAzMzA3IiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9&pageName=58985bba85e8d6e57c9c" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Loss Profile - Vale" data-description="Analysis of machine loss profile at Vale">
                     <div class="bi-card-image">
-                        <img src="images/Perfil de Perda.png" alt="Perfil de Perda Vale">
+                        <img src="images/Perfil de Perda.png" alt="Loss Profile Vale">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Perfil de Perda - Vale</h3>
-                        <p class="bi-card-description">Análise de perfil de perda de máquinas na Vale</p>
+                        <h3 class="bi-card-title">Loss Profile - Vale</h3>
+                        <p class="bi-card-description">Analysis of machines' loss profile at Vale</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="http://admintelemetria.xcmgbrasil.com.br/" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Telemetria" data-description="Site de telemetria da Onbard">
+                <a href="http://admintelemetria.xcmgbrasil.com.br/" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Telemetry" data-description="Onboard telemetry site">
                     <div class="bi-card-image">
-                        <img src="images/telemetria.png" alt="Telemetria">
+                        <img src="images/telemetria.png" alt="Telemetry">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Telemetria</h3>
-                        <p class="bi-card-description">Site de telemetria da Onbard para acompanhamento das máquinas</p>
+                        <h3 class="bi-card-title">Telemetry</h3>
+                        <p class="bi-card-description">Onboard telemetry site for machine monitoring</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
@@ -411,35 +411,35 @@ if (localStorage.getItem("acessoPermitido") !== "true") {
             </div>
         </section>
 
-        <!-- Homologação -->
-        <section class="category-section" data-category="homologacao">
+        <!-- Homologation -->
+        <section class="category-section" data-category="homologation">
             <div class="category-header">
                 <div class="category-bar"></div>
-                <span>Homologação</span>
+                <span>Homologation</span>
             </div>
             <div class="cards-grid" id="homologacao-grid">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzM5NTc3ZmMtYjNiZC00NGJhLWFlYTQtZjM4MjE4YjlhZDUyIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Teste XDE260" data-description="Dashboard de testes e homologação do equipamento XDE260">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzM5NTc3ZmMtYjNiZC00NGJhLWFlYTQtZjM4MjE4YjlhZDUyIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="XDE260 Test" data-description="Dashboard of tests and homologation for the XDE260 equipment">
                     <div class="bi-card-image">
-                        <img src="images/xde260.jpeg" alt="Caminhão XDE260">
+                        <img src="images/xde260.jpeg" alt="XDE260 Truck">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Análise de Desempenho Operacional Durante o Teste do XDE260</h3>
-                        <p class="bi-card-description">Dashboard do desempenho operacional do Caminhão Diesel-Elétrico XDE260</p>
+                        <h3 class="bi-card-title">Operational Performance Analysis During the XDE260 Test</h3>
+                        <p class="bi-card-description">Operational performance dashboard for the Diesel-Electric XDE260 Truck</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiNTBjN2ZiOTEtNTczNS00NmU0LWJjYzEtYzgzZGNiYjk2ODIyIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Kick off" data-description="Kick off de Novos Equipamentos">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNTBjN2ZiOTEtNTczNS00NmU0LWJjYzEtYzgzZGNiYjk2ODIyIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Kickoff" data-description="Kickoff of New Equipment">
                     <div class="bi-card-image">
                         <img src="images/kickoff.png" alt="Kick-Off">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Kickoff de Novos Equipamentos</h3>
-                        <p class="bi-card-description">Monitoramento de requisitos para homologação de novos equipamentos</p>
+                        <h3 class="bi-card-title">New Equipment Kickoff</h3>
+                        <p class="bi-card-description">Monitoring requirements for homologation of new equipment</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
@@ -447,124 +447,123 @@ if (localStorage.getItem("acessoPermitido") !== "true") {
             </div>
         </section>
 
-        <!-- Inteligência de Mercado -->
+        <!-- Market Intelligence -->
         <section class="category-section" data-category="mercado">
             <div class="category-header">
                 <div class="category-bar"></div>
-                <span>Inteligência de Mercado</span>
+                <span>Market Intelligence</span>
             </div>
             <div class="cards-grid" id="mercado-grid">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiYTEyNWU4YzEtNGUwYS00NTFiLWFmYzgtMDE1ZTcyMmVlNDRjIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Importação" data-description="Gráficos de importações de caminhões no Brasil">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYTEyNWU4YzEtNGUwYS00NTFiLWFmYzgtMDE1ZTcyMmVlNDRjIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Imports - Trucks" data-description="Charts of truck imports to Brazil">
                     <div class="bi-card-image">
-                        <img src="images/Caminhões.jpg" alt="Caminhões">
+                        <img src="images/Caminhões.jpg" alt="Trucks">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Importação - Caminhões</h3>
-                        <p class="bi-card-description">Gráficos de importações de caminhões no Brasil</p>
+                        <h3 class="bi-card-title">Imports - Trucks</h3>
+                        <p class="bi-card-description">Charts of truck imports to Brazil</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiNzVlNjgzZGMtMjA0ZS00ZjRkLWE4NDQtOTExMTlhNGVlMThmIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Importação - Motoniveladoras" data-description="Gráficos de importações de motoniveladoras no Brasil">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNzVlNjgzZGMtMjA0ZS00ZjRkLWE4NDQtOTExMTlhNGVlMThmIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Imports - Motor Graders" data-description="Charts of motor grader imports to Brazil">
                     <div class="bi-card-image">
-                        <img src="images/Motoniveladoras.png" alt="Motoniveladoras">
+                        <img src="images/Motoniveladoras.png" alt="Motor Graders">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Importação - Motoniveladoras</h3>
-                        <p class="bi-card-description">Gráficos de importações de motoniveladoras no Brasil</p>
+                        <h3 class="bi-card-title">Imports - Motor Graders</h3>
+                        <p class="bi-card-description">Charts of motor grader imports to Brazil</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiZjA0ZTczNmEtZDJkYS00NDAxLTlhMmQtYTZkZWNkMDU0Y2FkIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Importação - Escavadeiras e Mini Escavadeira" data-description="Gráficos de importações de escavadeiras e mini escavadeiras no Brasil">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiZjA0ZTczNmEtZDJkYS00NDAxLTlhMmQtYTZkZWNkMDU0Y2FkIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Imports - Excavators & Mini Excavators" data-description="Charts of excavator and mini excavator imports to Brazil">
                     <div class="bi-card-image">
-                        <img src="images/Escavadeiras.jpg" alt="Escavadeiras">
+                        <img src="images/Escavadeiras.jpg" alt="Excavators">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Importação - Escavadeiras e Mini Escavadeira</h3>
-                        <p class="bi-card-description">Gráficos de importações de escavadeiras e mini escavadeiras no Brasil</p>
+                        <h3 class="bi-card-title">Imports - Excavators & Mini Excavators</h3>
+                        <p class="bi-card-description">Charts of excavator and mini excavator imports to Brazil</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiNDdhMDkxNWQtYWVjMC00NTk4LTk3OGQtYjlkMzE0MzBiMmRkIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Guindastes Emplacamento" data-description="Gráfico de emplacamento de Guindastes">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNDdhMDkxNWQtYWVjMC00NTk4LTk3OGQtYjlkMzE0MzBiMmRkIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Cranes - Registration" data-description="Crane registration chart">
                     <div class="bi-card-image">
-                        <img src="images/EmplacamentoGuindaste.png" alt="Emplacamento Guindaste">
+                        <img src="images/EmplacamentoGuindaste.png" alt="Crane Registration">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Guindastes - Emplacamento</h3>
-                        <p class="bi-card-description">Gráfico de emplacamento de guindastes</p>
+                        <h3 class="bi-card-title">Cranes - Registration</h3>
+                        <p class="bi-card-description">Crane registration chart</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiZjI4MjQ2ZjMtNDAzYi00YjQzLWFiMDUtYzczYjgzZWU1ZjJlIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Importação - Guindaste" data-description="Gráficos de importações de guindastes">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiZjI4MjQ2ZjMtNDAzYi00YjQzLWFiMDUtYzczYjgzZWU1ZjJlIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Imports - Crane" data-description="Charts of crane imports">
                     <div class="bi-card-image">
-                        <img src="images/guindaste XCMG-XCT80.png" alt="Guindaste">
+                        <img src="images/guindaste XCMG-XCT80.png" alt="Crane">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Importação - Guindaste</h3>
-                        <p class="bi-card-description">Gráficos de importações de guindastes</p>
+                        <h3 class="bi-card-title">Imports - Crane</h3>
+                        <p class="bi-card-description">Charts of crane imports</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiM2U2ZmFjNzQtNzQ1Yy00NDQyLTk1OWYtNzlhNTNhZTIyMDk3IiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Importação - Rolo Compactador" data-description="Gráficos de importações de rolo compactador">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiM2U2ZmFjNzQtNzQ1Yy00NDQyLTk1OWYtNzlhNTNhZTIyMDk3IiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Imports - Road Roller" data-description="Charts of road roller imports">
                     <div class="bi-card-image">
-                        <img src="images/rolo compactador.png" alt="Rolo Compactador">
+                        <img src="images/rolo compactador.png" alt="Road Roller">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Importação - Rolo Compactador</h3>
-                        <p class="bi-card-description">Gráficos de importações de rolo compactador</p>
+                        <h3 class="bi-card-title">Imports - Road Roller</h3>
+                        <p class="bi-card-description">Charts of road roller imports</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                
             </div>
         </section>
 
-        <!-- Diversos -->
+        <!-- Application -->
         <section class="category-section" data-category="performance">
             <div class="category-header">
                 <div class="category-bar"></div>
-                <span>Aplicação</span>
+                <span>Application</span>
             </div>
             <div class="cards-grid" id="diversos-grid">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiNmEzNjRjYzEtODdkMS00MDJlLTk1MDEtY2IwYzNmNjQ5NjBlIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Distribuição de máquinas" data-description="Gerenciamento de cobertura e distribuição de máquinas">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNmEzNjRjYzEtODdkMS00MDJlLTk1MDEtY2IwYzNmNjQ5NjBlIiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Machine Coverage" data-description="Management of machine coverage and distribution">
                     <div class="bi-card-image">
-                        <img src="images/IntelMer.png" alt="Cobertura de Máquinas">
+                        <img src="images/IntelMer.png" alt="Machine Coverage">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Cobertura de Máquinas</h3>
-                        <p class="bi-card-description">Gerenciamento de cobertura e distribuição de máquinas</p>
+                        <h3 class="bi-card-title">Machine Coverage</h3>
+                        <p class="bi-card-description">Management of machine coverage and distribution</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiN2I2ZWUyMDctODkwNS00OTM2LTk0YjktMmNlMjYxNjhlMGY5IiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Reunião Perfil de Perda" data-description="Reunião de análise de perfil de perda através de DF, HMC e NIC">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiN2I2ZWUyMDctODkwNS00OTM2LTk0YjktMmNlMjYxNjhlMGY5IiwidCI6ImZmNGQ4ZGY1LWYwNTAtNDdiOC04Y2Y4LWFlNzk5NGYwYTAxZCJ9" target="_blank" rel="noopener noreferrer" class="bi-card" data-name="Loss Profile Meeting" data-description="Analysis meeting of loss profile using DF, HMC and NIC">
                     <div class="bi-card-image">
-                        <img src="images/Reunião Perfil de Perda.png" alt="Reunião Perfil de Perda">
+                        <img src="images/Reunião Perfil de Perda.png" alt="Loss Profile Meeting">
                     </div>
                     <div class="bi-card-content">
-                        <h3 class="bi-card-title">Reunião Perfil de Perda</h3>
-                        <p class="bi-card-description">Reunião de análise de perfil de perda através de DF, HMC e NIC dos equipamentos</p>
+                        <h3 class="bi-card-title">Loss Profile Meeting</h3>
+                        <p class="bi-card-description">Analysis meeting of loss profile using DF, HMC and NIC of the equipment</p>
                         <div class="bi-card-link">
-                            Acessar BI
+                            Access BI
                             <span class="arrow">→</span>
                         </div>
                     </div>
@@ -575,7 +574,7 @@ if (localStorage.getItem("acessoPermitido") !== "true") {
 
     <!-- Footer -->
     <footer>
-        <p>Centro Integrado de BI - Engenharia de Aplicação - XCMG</p>
+        <p>Integrated BI Center - Application Engineering - XCMG</p>
     </footer>
 
     <!-- JavaScript -->
@@ -585,7 +584,7 @@ if (localStorage.getItem("acessoPermitido") !== "true") {
         const categorySections = document.querySelectorAll('.category-section');
         const allCards = document.querySelectorAll('.bi-card');
 
-        // Função de busca
+        // Search function
         function filterBIs() {
             const searchTerm = searchInput.value.toLowerCase().trim();
             let hasVisibleCards = false;
@@ -608,19 +607,19 @@ if (localStorage.getItem("acessoPermitido") !== "true") {
                     }
                 });
 
-                // Mostrar/ocultar seção se houver cards visíveis
+                // Show/hide section if there are visible cards
                 section.style.display = visibleInSection > 0 ? '' : 'none';
             });
 
-            // Mostrar mensagem de nenhum resultado
+            // Show "no results" message
             noResults.style.display = hasVisibleCards ? 'none' : 'block';
         }
 
-        // Event listener para o input de busca
+        // Event listeners for the search input
         searchInput.addEventListener('input', filterBIs);
         searchInput.addEventListener('keyup', filterBIs);
 
-        // Inicializar
+        // Initialize
         filterBIs();
     </script>
 </body>
